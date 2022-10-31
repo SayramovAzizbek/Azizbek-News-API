@@ -4,7 +4,8 @@ const newsInput = document.querySelector(".news-input");
 const newsBtn = document.querySelector(".news-btn");
 const newsList = document.querySelector(".news-list");
 const newsApiTemplate = document.querySelector(".newsApi-template").content;
-function showApiNews(evt) {
+
+newsForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const newsFragment = document.createDocumentFragment();
   fetch(
@@ -33,6 +34,4 @@ function showApiNews(evt) {
       newsList.appendChild(newsFragment);
     })
     .catch((err) => console.log(err));
-}
-newsForm.addEventListener("submit", showApiNews);
-showApiNews();
+});
