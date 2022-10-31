@@ -14,7 +14,6 @@ newsForm.addEventListener("submit", (evt) => {
     .then((res) => res.json())
     .then((data) => {
       data.articles.forEach((item) => {
-        console.log(data.articles);
         let cloneNewsApiTemplate = newsApiTemplate.cloneNode(true);
         cloneNewsApiTemplate.querySelector(".newsApi-item-link").href =
           item.url;
