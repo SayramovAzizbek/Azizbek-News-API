@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+
+    <section id="news-api-form">
+        <div class="container">
+            <h2 class="news-api-form-title">News</h2>
+            <form class="news-form">
+                <input class="news-input" type="text" placeholder="Search">
+                <button class="news-btn" type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="news-res">
+        <div class="container">
+            <div class="news-res-part">
+                <ul class="news-list"></ul>
+            </div>
+        </div>
+    </section>
+
+    <template class="newsApi-template">
+        <li class="newsApi-item">
+            <a class="newsApi-item-link" href="" target="blank">
+                <img class="newsApi-img" src="" alt="News Image">
+            </a>
+            <div class="newsApi-item-box">
+                <a class="newsApi-item-link" href="" target="blank">
+                    <h3 class="newsApi-item-title"></h3>
+                    <p class="newsApi-item-text"></p>
+                </a>
+                <h4 class="news-author"></h4>
+                <p class="newsApi-publish-time"></p>
+            </div>
+        </li>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
