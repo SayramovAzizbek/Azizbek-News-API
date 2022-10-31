@@ -5,9 +5,9 @@ const newsBtn = document.querySelector(".news-btn");
 const newsList = document.querySelector(".news-list");
 const newsApiTemplate = document.querySelector(".newsApi-template").content;
 
-newsForm.addEventListener("submit", (evt) => {
+const newsFragment = document.createDocumentFragment();
+newsForm.addEventListener("keyup", (evt) => {
   evt.preventDefault();
-  const newsFragment = document.createDocumentFragment();
   fetch(
     `https://newsapi.org/v2/everything?q=${newsInput.value}&from=2022-09-30&sortBy=publishedAt&apiKey=${apiKey}`
   )
@@ -23,11 +23,12 @@ newsForm.addEventListener("submit", (evt) => {
           item.title;
         cloneNewsApiTemplate.querySelector(".newsApi-item-text").textContent =
           item.source.name;
-        cloneNewsApiTemplate.querySelector(".news-author").textContent =
-          item.author;
+        cloneNewsApiTemplate.querySelector(
+          ".news-author"
+        ).textContent = `Author: ${item.author}`;
         cloneNewsApiTemplate.querySelector(
           ".newsApi-publish-time"
-        ).textContent = item.publishedAt;
+        ).textContent = `Published: ${item.publishedAt}`;
         newsFragment.appendChild(cloneNewsApiTemplate);
       });
       newsList.appendChild(newsFragment);
