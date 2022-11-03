@@ -1,12 +1,18 @@
-const apiKey = "7120a56d2ac34b19a37a1ef2dc6e9548"; 
-// const apiKey = "551552c7df5d430e9e59897e68d47365";
+// const apiKey = "7120a56d2ac34b19a37a1ef2dc6e9548";
+const apiKey = "551552c7df5d430e9e59897e68d47365";
+let newsAPI_KEY = `https://newsapi.org/v2/everything?q=world&apiKey=${apiKey}`;
 const newsForm = document.querySelector(".news-form");
 const newsInput = document.querySelector(".news-input");
 const newsBtn = document.querySelector(".news-btn");
 const newsList = document.querySelector(".news-list");
-let newsAPI_KEY = `https://newsapi.org/v2/everything?q=tesla&apiKey=${apiKey}`;
+const searchOpenBtn = document.querySelector(".search-open-btn");
 
 newsApiTemplate = document.querySelector(".newsApi-template").content;
+
+searchOpenBtn.addEventListener("click", () => {
+  newsForm.classList.toggle("d-flex");
+});
+
 const newsFragment = document.createDocumentFragment();
 
 function showNews(url) {
@@ -37,7 +43,7 @@ function showNews(url) {
     .catch((err) => console.log(err));
 }
 showNews(newsAPI_KEY);
-newsInput.addEventListener("keyup", () => {
-  newsAPI_KEY = `https://newsapi.org/v2/everything?q=${newsInput.value.trim()}&from=2022-09-30&sortBy=publishedAt&apiKey=${apiKey}`;
+newsForm.addEventListener("keyup", () => {
+  newsAPI_KEY = `https://newsapi.org/v2/everything?q=${newsInput.value.trim()}&sortBy=publishedAt&apiKey=${apiKey}`;
   showNews(newsAPI_KEY);
 });

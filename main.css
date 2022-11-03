@@ -2,20 +2,34 @@
     max-width: 1400px;
 }
 
-#news-api-form {
-    padding: 50px 0;
+#site-header {
+    padding: 30px 0;
 }
 
-.news-api-form-title {
-    margin-bottom: 10px;
-    font-size: 45px;
-    text-align: center;
+.header-part {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.search-open-btn {
+    width: 20px;
+    height: 20px;
+    background-image: url("./images/search-icon.png");
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+#news-res {
+    margin-top: 50px;
 }
 
 .news-form {
-    display: flex;
+    display: none;
     align-items: center;
-    max-width: 800px;
+    width: 600px;
     margin: 0px auto;
 }
 
